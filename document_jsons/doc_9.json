@@ -1,0 +1,53 @@
+{
+  "title": "REMITTANCE ADVICE",
+  "purchasing": {
+	"company_name": "Bread Co",
+	"address": "332 Beach Dr NE, St Petersburg, FL, 33713",
+	"email": "ebrooks@breadco.net",
+	"phone_number": "223-436-7891",
+	"customer_reference_number": "10032"
+  },
+  "supplier_details": {
+	"company_name": "Evergreen Suppliers",
+	"address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+	"email": "tlannister@evergreensuppliers.com",
+	"phone_number": "847-759-9990"
+  },
+  "invoices": [
+	{
+  	"invoice_number": "3185",
+  	"invoice_date": "3/21/2024",
+  	"gross_amount": 8742,
+  	"discount_taken": 175,
+  	"paid_amount": 8567
+	},
+	{
+  	"invoice_number": "9985",
+  	"invoice_date": "1/29/2024",
+  	"gross_amount": 3100,
+  	"discount_taken": null,
+  	"paid_amount": 3100
+	},
+	{
+  	"invoice_number": "1043-A",
+  	"invoice_date": "3/1/2024",
+  	"gross_amount": 4555,
+  	"discount_taken": null,
+  	"paid_amount": 4555
+	},
+	{
+  	"invoice_number": "2111",
+  	"invoice_date": "3/8/2024",
+  	"gross_amount": 2300,
+  	"discount_taken": null,
+  	"paid_amount": 2300
+	}
+  ],
+  "payment": {
+	"check_number": "1031",
+	"check_date": "3/24/2024",
+	"total_gross_amount": 18697,
+	"total_discount": 175,
+	"total_paid": 18522
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"purchase_order": {
+    	"po_number": "23781",
+    	"date": "8/3/2019",
+    	"vendor": {
+        	"name": "Jerry Sanchez",
+        	"company": "Auto Supplier Inc.",
+        	"address": "40 SKOKIE BLVD STE 400, NORTHBROOK, IL, 60062",
+        	"phone": "984-325-9994",
+        	"email": "jsanchez@autosupplier.com"
+    	},
+    	"customer": {
+        	"name": "John Smith",
+        	"company": "Redline Auto Center",
+        	"address": "16040 S. US 27, Lansing, Michigan 48906",
+        	"phone": "517-367-7010",
+        	"email": "johnsmith@redline.com"
+    	},
+    	"shipping": {
+        	"terms": "FOB Origin",
+        	"method": "Freight",
+        	"delivery_date": "12/1/2019"
+    	},
+    	"financials": {
+        	"subtotal": "1,366.96",
+        	"discount_percentage": "10",
+        	"discount_amount": "136.70",
+        	"sales_tax_percentage": "12",
+        	"sales_tax_amount": "164.04",
+        	"other_cost": "500.00",
+        	"shipping_handling": "800.00",
+        	"total_amount": "2,694.30"
+    	}
+	}
+}

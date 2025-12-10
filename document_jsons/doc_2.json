@@ -1,0 +1,34 @@
+{
+	"business_name": "Bella's Bakery",
+	"business_address": {
+    	"street": "142 Cedar Ave",
+    	"city_state_zip": "San Diego, CA, 90122",
+    	"phone": "(217) 552-0192",
+    	"website": "bellasbakery.net"
+	},
+	"order_details": {
+    	"date": "3/1/2022",
+    	"po_number": "LM10391"
+	},
+	"vendor_info": {
+    	"company": "Evergreen Supplies Inc.",
+    	"contact": "Clark Wilson",
+    	"street": "88 Sunrise Blvd",
+    	"city_state_zip": "Riverside, CA, 92506",
+    	"phone": "(951) 555-0123",
+    	"email": "cwilson@evergreen.com"
+	},
+	"shipping_info": {
+    	"method": "UPS",
+    	"fob": "Destination",
+    	"terms": "NA",
+    	"recipient_email": "orders@bellasbakery.com"
+	},
+	"financial_details": {
+    	"subtotal": "1,942.50",
+    	"shipping": "100.00",
+    	"tax": "143.98",
+    	"total": "2,186.48"
+	},
+	"special_instructions": "Delivery needs to be completed by 5/20"
+}

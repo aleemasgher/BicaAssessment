@@ -1,0 +1,13 @@
+{
+	"document_id": "INV-2024-203",
+	"payee": "Todd Arnold",
+	"amount_text": "Twenty Thousand and Nine and 00/100",
+	"amount_numeric": "20,009.00",
+	"payor": "Superior Casting Co.",
+	"payor_address": {
+    	"street": "1222 Financial Ave",
+    	"location": "Pittsburgh, PA, 15201"
+	},
+	"date": "6/4/2024",
+	"bank_name": "First National Bank"
+}

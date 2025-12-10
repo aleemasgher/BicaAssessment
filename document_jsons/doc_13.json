@@ -1,0 +1,14 @@
+{
+	"document_date": "5/6/2022",
+	"purchase_order_number": "LM10391",
+	"shipper_number": "1298428",
+	"consignee_email": "orders@bellasbakery.com",
+	"consignee_phone": "(217) 552-0192",
+	"consignee_name": "Bella's Bakery",
+	"consignee_address": "San Diego, CA, 90122",
+	"shipper_name": "Evergreen Supplies Inc.",
+	"shipper_street": "88 Sunrise Blvd",
+	"shipper_location": "Riverside, CA, 92506",
+	"cod_amount": "$100",
+	"freight_handling": "LOOSE PC and PLTS STC"
+}

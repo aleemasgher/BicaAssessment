@@ -1,0 +1,21 @@
+{
+	"transfer_reference": "DWR-20239451",
+	"transaction_number": "R2023320",
+	"amount": "USD 55,350.00",
+	"debit_account": "4290",
+	"payment_date": "4/16/2024",
+	"originator": {
+    	"name": "TITAN HEAVY INDUSTRIES",
+    	"address_1": "890 ladustrial Drive",
+    	"address_2": "Chicago, IL, 60602"
+	},
+	"beneficiary": {
+    	"name": "Superior Castings Co",
+    	"id": "8765432129"
+	},
+	"beneficiary_bank": {
+    	"name": "Cleveland National",
+    	"id": "114098765"
+	},
+	"reference_number": "RT204132"
+}

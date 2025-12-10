@@ -1,0 +1,34 @@
+{
+	"company_name": "Auto Supplier Inc.",
+	"company_address": {
+    	"street": "40 Skokie BLVD Ste 400",
+    	"city": "Northbrook",
+    	"state": "IL",
+    	"zip": "60062"
+	},
+	"contact": {
+    	"phone": "984-325-9994",
+    	"fax": "984-444-9993",
+    	"email": "ar@autosupplier.com"
+	},
+	"invoice_details": {
+    	"number": "IK-90112",
+    	"date": "12/5/2019",
+    	"po_number": "23781"
+	},
+	"customer_info": {
+    	"name": "John Smith",
+    	"company": "Redline Auto Center",
+    	"address": "16040 S. US 27",
+    	"city": "Lansing",
+    	"state": "Michigan",
+    	"zip": "48906",
+    	"phone": "517-367-7010"
+	},
+	"shipping_details": {
+    	"carrier": "FedEx",
+    	"fob_point": "Origin",
+    	"terms": "Due 30 days after receipt"
+	},
+	"sales_person": "Jerry Sanchez"
+}

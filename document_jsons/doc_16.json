@@ -1,0 +1,22 @@
+{
+	"company_name": "Evergreen Supply",
+	"company_address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+	"company_phone": "(951) 555-0123",
+	"invoice_number": "3185",
+	"invoice_date": "3/24/2024",
+	"customer_name": "Emily Brooks",
+	"customer_company": "Bread Co",
+	"customer_address": "332 Beach Dr NE",
+	"customer_city_state_zip": "St Petersburg, FL, 33713",
+	"customer_phone": "(217) 552-0192",
+	"salesperson": "Chuck Lee",
+	"po_number": "0191",
+	"shipping_method": "Fedex",
+	"fob_point": "Origin",
+	"payment_terms": "2/10 N30",
+	"subtotal": "8400.00",
+	"shipping_handling": "342",
+	"total_amount": "8742.00",
+	"billing_contact": "Greg Handler",
+	"billing_email": "billing@evergreen"
+}

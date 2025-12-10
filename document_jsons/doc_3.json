@@ -1,0 +1,20 @@
+{
+	"remittance_date": "6/30/2022",
+	"purchasing": {
+    	"company_name": "Bella's Bakery",
+    	"address": "142 Cedar Ave, San Diego, CA, 90122",
+    	"email": "orders@bellasbakery.com",
+    	"phone": "(217) 552-0192",
+    	"customer_reference": "10001"
+	},
+	"supplier": {
+    	"company_name": "Evergreen Supplies Inc.",
+    	"address": "88 Sunrise Blvd, Riverside, CA, 92506",
+    	"phone": "(951) 555-0123"
+	},
+	"payment_details": {
+    	"invoice_number": "202449",
+    	"payment_method": "Wire",
+    	"amount_paid": "2186.48"
+	}
+}

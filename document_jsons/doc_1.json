@@ -1,0 +1,31 @@
+{
+	"invoice_details": {
+    	"date": "5/2/2022",
+    	"invoice_number": "202449",
+    	"po_number": "LM10391",
+    	"payment_terms": "Due on Receipt"
+	},
+	"customer_info": {
+    	"name": "Bella Blake",
+    	"business_name": "Bella's Bakery",
+    	"address": "142 Cedar Ave, San Diego, CA, 90122",
+    	"phone": "(217) 552-0192",
+    	"email": "orders@bellasbakery.com"
+	},
+	"banking_info": {
+    	"bank_name": "First National Bank",
+    	"account_holder": "Evergreen Supplies Inc.",
+    	"account_number": "9876543210",
+    	"routing_number": "123456789",
+    	"swift_code": "FNATUS33XXX"
+	},
+	"financial_summary": {
+    	"subtotal": "1942.50",
+    	"shipping_handling": "100.00",
+    	"discount": "0.00",
+    	"subtotal_less_discount": "2042.50",
+    	"tax_rate": "7.05%",
+    	"total_tax": "143.98",
+    	"balance_due": "2,186.48"
+	}
+}

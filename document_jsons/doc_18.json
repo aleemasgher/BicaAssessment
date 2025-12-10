@@ -1,0 +1,40 @@
+{
+	"company_name": "Superior Casting Co.",
+	"company_address": {
+    	"street": "789 Foundry Avenue",
+    	"city": "Pittsburgh",
+    	"state": "PA",
+    	"zip": "15201"
+	},
+	"company_contact": {
+    	"phone": "(412) 555-6789",
+    	"email": "billing@superorcasting.com",
+    	"website": "superiorcasting.net"
+	},
+	"invoice_details": {
+    	"date": "2/28/2024",
+    	"invoice_number": "9019854",
+    	"customer_id": "1047",
+    	"purchase_order": "RT204132",
+    	"payment_terms": "2/10 N60",
+    	"due_date": "4/28/2024"
+	},
+	"customer_info": {
+    	"name": "Titan Heavy Industries",
+    	"address": {
+        	"street": "890 Industrial Drive",
+        	"city": "Chicago",
+        	"state": "IL",
+        	"zip": "60602"
+    	},
+    	"contact": {
+        	"phone": "(312) 555-3456",
+        	"email": "accounts@titanindustries.com"
+    	}
+	},
+	"banking_info": {
+    	"account_number": "1043912",
+    	"routing_number": "1298232"
+	},
+	"total_amount": "$55,350.00"
+}

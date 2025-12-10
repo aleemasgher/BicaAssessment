@@ -1,0 +1,29 @@
+{
+	"company_name": "Superior Casting Co.",
+	"company_phone": "(412) 555-6789",
+	"company_email": "billing@superiorcasting.com",
+	"company_website": "superiorcasting.net",
+	"invoice_date": "5/5/2024",
+	"invoice_number": "INV-2024-203",
+	"customer_id": "1047",
+	"purchase_order": "PO1921",
+	"payment_terms": "N30",
+	"payment_due_date": "6/4/2024",
+	"customer_name": "Titan Heavy Industries",
+	"customer_address": {
+    	"street": "890 Industrial Drive",
+    	"city": "Chicago",
+    	"state": "IL",
+    	"zip": "60602"
+	},
+	"customer_phone": "(312) 555-3456",
+	"customer_email": "accounts@titanindustries.com",
+	"account_number": "1043912",
+	"routing_number": "1298232",
+	"financial_details": {
+    	"subtotal": "$19,430.00",
+    	"discount": "-$500.00",
+    	"tax_rate": "0%",
+    	"total": "$18,930.00"
+	}
+}

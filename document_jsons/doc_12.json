@@ -1,0 +1,25 @@
+{
+	"bill_of_lading_number": "928221",
+	"shipper": {
+    	"name": "Auto Suppliers Inc",
+    	"address": "40 Skokie BLVD Ste 400",
+    	"city_state_zip": "Northbrook, IL, 60062",
+    	"sid_number": "98424",
+    	"phone": "984-325-9994"
+	},
+	"ship_to": {
+    	"name": "Redline Auto Center",
+    	"address": "16040 S. US 27",
+    	"city_state_zip": "Lansing, Michigan, 48906",
+    	"cid_number": "2019412"
+	},
+	"carrier": {
+    	"name": "Yellow",
+    	"trailer_number": "SF45001",
+    	"scac_code": "YELL"
+	},
+	"financial": {
+    	"cod_amount": "800"
+	},
+	"date": "12/4/2019"
+}

@@ -1,0 +1,32 @@
+{
+	"purchase_order": {
+    	"po_number": "1921",
+    	"date_issued": "2/4/2024",
+    	"vendor": {
+        	"name": "Jeff Richards",
+        	"company": "Superior Casting Co",
+        	"address": "789 Foundry Avenue",
+        	"city_state_zip": "Pittsburgh, PA, 15201",
+        	"phone": "(312) 555-3456"
+    	},
+    	"buyer": {
+        	"name": "Todd Arnold",
+        	"company": "Titan Heavy Industries",
+        	"address": "890 Industrial Drive",
+        	"city_state_zip": "Chicago, IL, 60602",
+        	"email": "accounts@titanindustries.com",
+        	"website": "www.titanheavyindustries.net"
+    	},
+    	"shipping": {
+        	"method": "Freight",
+        	"fob": "Dest",
+        	"terms": "N30"
+    	},
+    	"approval": {
+        	"date": "2/5/2024"
+    	},
+    	"financial": {
+        	"total_amount": "18,450.00"
+    	}
+	}
+}

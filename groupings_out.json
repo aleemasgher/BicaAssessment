@@ -1,0 +1,882 @@
+[
+  {
+    "sample_index": 0,
+    "sample_description": {
+      "Customer Name": "Redline Auto Center",
+      "Customer #": "10322",
+      "Invoice Number": "IK-90112",
+      "Invoice Amount": "20",
+      "Invoice Date": "2019-12-05",
+      "Comments": ""
+    },
+    "doc_ids": [
+      "doc_12.json",
+      "doc_4.json",
+      "doc_5.json",
+      "doc_8.json"
+    ],
+    "documents": [
+      {
+        "bill_of_lading_number": "928221",
+        "shipper": {
+          "name": "Auto Suppliers Inc",
+          "address": "40 Skokie BLVD Ste 400",
+          "city_state_zip": "Northbrook, IL, 60062",
+          "sid_number": "98424",
+          "phone": "984-325-9994"
+        },
+        "ship_to": {
+          "name": "Redline Auto Center",
+          "address": "16040 S. US 27",
+          "city_state_zip": "Lansing, Michigan, 48906",
+          "cid_number": "2019412"
+        },
+        "carrier": {
+          "name": "Yellow",
+          "trailer_number": "SF45001",
+          "scac_code": "YELL"
+        },
+        "financial": {
+          "cod_amount": "800"
+        },
+        "date": "12/4/2019"
+      },
+      {
+        "payment_to": "Auto Supplier Inc.",
+        "receipt_number": "100042",
+        "received_from": "Redline Auto Center",
+        "payment_reference": "IK-90112",
+        "payment_date": "12/28/2019",
+        "amount_paid": "2,684.30",
+        "check_number": "8800024",
+        "account_balance": "4,370.32",
+        "balance_due": "1,676.02"
+      },
+      {
+        "purchase_order": {
+          "po_number": "23781",
+          "date": "8/3/2019",
+          "vendor": {
+            "name": "Jerry Sanchez",
+            "company": "Auto Supplier Inc.",
+            "address": "40 SKOKIE BLVD STE 400, NORTHBROOK, IL, 60062",
+            "phone": "984-325-9994",
+            "email": "jsanchez@autosupplier.com"
+          },
+          "customer": {
+            "name": "John Smith",
+            "company": "Redline Auto Center",
+            "address": "16040 S. US 27, Lansing, Michigan 48906",
+            "phone": "517-367-7010",
+            "email": "johnsmith@redline.com"
+          },
+          "shipping": {
+            "terms": "FOB Origin",
+            "method": "Freight",
+            "delivery_date": "12/1/2019"
+          },
+          "financials": {
+            "subtotal": "1,366.96",
+            "discount_percentage": "10",
+            "discount_amount": "136.70",
+            "sales_tax_percentage": "12",
+            "sales_tax_amount": "164.04",
+            "other_cost": "500.00",
+            "shipping_handling": "800.00",
+            "total_amount": "2,694.30"
+          }
+        }
+      },
+      {
+        "company_name": "Auto Supplier Inc.",
+        "company_address": {
+          "street": "40 Skokie BLVD Ste 400",
+          "city": "Northbrook",
+          "state": "IL",
+          "zip": "60062"
+        },
+        "contact": {
+          "phone": "984-325-9994",
+          "fax": "984-444-9993",
+          "email": "ar@autosupplier.com"
+        },
+        "invoice_details": {
+          "number": "IK-90112",
+          "date": "12/5/2019",
+          "po_number": "23781"
+        },
+        "customer_info": {
+          "name": "John Smith",
+          "company": "Redline Auto Center",
+          "address": "16040 S. US 27",
+          "city": "Lansing",
+          "state": "Michigan",
+          "zip": "48906",
+          "phone": "517-367-7010"
+        },
+        "shipping_details": {
+          "carrier": "FedEx",
+          "fob_point": "Origin",
+          "terms": "Due 30 days after receipt"
+        },
+        "sales_person": "Jerry Sanchez"
+      }
+    ]
+  },
+  {
+    "sample_index": 1,
+    "sample_description": {
+      "Customer Name": "Titan Heavy Industries",
+      "Customer #": "120429",
+      "Invoice Number": "019854",
+      "Invoice Amount": "55350",
+      "Invoice Date": "2024-02-25",
+      "Comments": ""
+    },
+    "doc_ids": [
+      "doc_10.json",
+      "doc_11.json",
+      "doc_15.json",
+      "doc_17.json",
+      "doc_18.json",
+      "doc_19.json"
+    ],
+    "documents": [
+      {
+        "document_date": "5/5/2024",
+        "bill_of_lading_number": "3275723",
+        "shipper_name": "Superior Casting Co",
+        "shipper_address": "789 Foundry Avenue",
+        "shipper_city_state_zip": "Pittsburgh, PA, 15201",
+        "shipper_id": "32952",
+        "carrier_name": "CPU",
+        "trailer_number": "52",
+        "seal_number": "A321",
+        "scac_code": "1442",
+        "pro_number": "325889200",
+        "location_number": "663",
+        "consignee_name": "Titan Heavy Industries",
+        "consignee_address": "890 Industrial Drive",
+        "consignee_city_state_zip": "Chicago, IL, 60602",
+        "consignee_id": "32753",
+        "purchase_order": "PO# 1921",
+        "contact_email": "billing@superiorcasting.com",
+        "declared_value": "20,000"
+      },
+      {
+        "document_details": {
+          "date": "2/28/2024",
+          "bill_of_lading_number": "4475723"
+        },
+        "shipper_information": {
+          "company_name": "Superior Casting Co",
+          "address": "789 Foundry Avenue",
+          "location": "Pittsburgh, PA, 15201",
+          "sid_number": "5292"
+        },
+        "carrier_information": {
+          "carrier_name": "Steel Freight Co",
+          "trailer_number": "51",
+          "seal_number": "A357",
+          "scac_code": "142",
+          "pro_number": "3258890"
+        },
+        "consignee_information": {
+          "location_number": "663",
+          "company_name": "Titan Heavy Industries",
+          "address": "890 Industrial Drive",
+          "location": "Chicago, IL, 60602",
+          "cid_number": "327"
+        },
+        "contact_information": {
+          "purchase_order": "RT204132",
+          "email": "superiorcasting.net",
+          "phone": "(412) 555-6789"
+        },
+        "liability_information": {
+          "declared_value_limit": "100,000"
+        }
+      },
+      {
+        "transfer_reference": "DWR-20239451",
+        "transaction_number": "R2023320",
+        "amount": "USD 55,350.00",
+        "debit_account": "4290",
+        "payment_date": "4/16/2024",
+        "originator": {
+          "name": "TITAN HEAVY INDUSTRIES",
+          "address_1": "890 ladustrial Drive",
+          "address_2": "Chicago, IL, 60602"
+        },
+        "beneficiary": {
+          "name": "Superior Castings Co",
+          "id": "8765432129"
+        },
+        "beneficiary_bank": {
+          "name": "Cleveland National",
+          "id": "114098765"
+        },
+        "reference_number": "RT204132"
+      },
+      {
+        "company_name": "Superior Casting Co.",
+        "company_phone": "(412) 555-6789",
+        "company_email": "billing@superiorcasting.com",
+        "company_website": "superiorcasting.net",
+        "invoice_date": "5/5/2024",
+        "invoice_number": "INV-2024-203",
+        "customer_id": "1047",
+        "purchase_order": "PO1921",
+        "payment_terms": "N30",
+        "payment_due_date": "6/4/2024",
+        "customer_name": "Titan Heavy Industries",
+        "customer_address": {
+          "street": "890 Industrial Drive",
+          "city": "Chicago",
+          "state": "IL",
+          "zip": "60602"
+        },
+        "customer_phone": "(312) 555-3456",
+        "customer_email": "accounts@titanindustries.com",
+        "account_number": "1043912",
+        "routing_number": "1298232",
+        "financial_details": {
+          "subtotal": "$19,430.00",
+          "discount": "-$500.00",
+          "tax_rate": "0%",
+          "total": "$18,930.00"
+        }
+      },
+      {
+        "company_name": "Superior Casting Co.",
+        "company_address": {
+          "street": "789 Foundry Avenue",
+          "city": "Pittsburgh",
+          "state": "PA",
+          "zip": "15201"
+        },
+        "company_contact": {
+          "phone": "(412) 555-6789",
+          "email": "billing@superorcasting.com",
+          "website": "superiorcasting.net"
+        },
+        "invoice_details": {
+          "date": "2/28/2024",
+          "invoice_number": "9019854",
+          "customer_id": "1047",
+          "purchase_order": "RT204132",
+          "payment_terms": "2/10 N60",
+          "due_date": "4/28/2024"
+        },
+        "customer_info": {
+          "name": "Titan Heavy Industries",
+          "address": {
+            "street": "890 Industrial Drive",
+            "city": "Chicago",
+            "state": "IL",
+            "zip": "60602"
+          },
+          "contact": {
+            "phone": "(312) 555-3456",
+            "email": "accounts@titanindustries.com"
+          }
+        },
+        "banking_info": {
+          "account_number": "1043912",
+          "routing_number": "1298232"
+        },
+        "total_amount": "$55,350.00"
+      },
+      {
+        "purchase_order": {
+          "po_number": "1921",
+          "date_issued": "2/4/2024",
+          "vendor": {
+            "name": "Jeff Richards",
+            "company": "Superior Casting Co",
+            "address": "789 Foundry Avenue",
+            "city_state_zip": "Pittsburgh, PA, 15201",
+            "phone": "(312) 555-3456"
+          },
+          "buyer": {
+            "name": "Todd Arnold",
+            "company": "Titan Heavy Industries",
+            "address": "890 Industrial Drive",
+            "city_state_zip": "Chicago, IL, 60602",
+            "email": "accounts@titanindustries.com",
+            "website": "www.titanheavyindustries.net"
+          },
+          "shipping": {
+            "method": "Freight",
+            "fob": "Dest",
+            "terms": "N30"
+          },
+          "approval": {
+            "date": "2/5/2024"
+          },
+          "financial": {
+            "total_amount": "18,450.00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "sample_index": 2,
+    "sample_description": {
+      "Customer Name": "Titan Heavy Industries",
+      "Customer #": "120422",
+      "Invoice Number": "024-2031893",
+      "Invoice Amount": "0",
+      "Invoice Date": "2024-05-05",
+      "Comments": ""
+    },
+    "doc_ids": [
+      "doc_10.json",
+      "doc_11.json",
+      "doc_15.json",
+      "doc_17.json",
+      "doc_18.json",
+      "doc_19.json"
+    ],
+    "documents": [
+      {
+        "document_date": "5/5/2024",
+        "bill_of_lading_number": "3275723",
+        "shipper_name": "Superior Casting Co",
+        "shipper_address": "789 Foundry Avenue",
+        "shipper_city_state_zip": "Pittsburgh, PA, 15201",
+        "shipper_id": "32952",
+        "carrier_name": "CPU",
+        "trailer_number": "52",
+        "seal_number": "A321",
+        "scac_code": "1442",
+        "pro_number": "325889200",
+        "location_number": "663",
+        "consignee_name": "Titan Heavy Industries",
+        "consignee_address": "890 Industrial Drive",
+        "consignee_city_state_zip": "Chicago, IL, 60602",
+        "consignee_id": "32753",
+        "purchase_order": "PO# 1921",
+        "contact_email": "billing@superiorcasting.com",
+        "declared_value": "20,000"
+      },
+      {
+        "document_details": {
+          "date": "2/28/2024",
+          "bill_of_lading_number": "4475723"
+        },
+        "shipper_information": {
+          "company_name": "Superior Casting Co",
+          "address": "789 Foundry Avenue",
+          "location": "Pittsburgh, PA, 15201",
+          "sid_number": "5292"
+        },
+        "carrier_information": {
+          "carrier_name": "Steel Freight Co",
+          "trailer_number": "51",
+          "seal_number": "A357",
+          "scac_code": "142",
+          "pro_number": "3258890"
+        },
+        "consignee_information": {
+          "location_number": "663",
+          "company_name": "Titan Heavy Industries",
+          "address": "890 Industrial Drive",
+          "location": "Chicago, IL, 60602",
+          "cid_number": "327"
+        },
+        "contact_information": {
+          "purchase_order": "RT204132",
+          "email": "superiorcasting.net",
+          "phone": "(412) 555-6789"
+        },
+        "liability_information": {
+          "declared_value_limit": "100,000"
+        }
+      },
+      {
+        "transfer_reference": "DWR-20239451",
+        "transaction_number": "R2023320",
+        "amount": "USD 55,350.00",
+        "debit_account": "4290",
+        "payment_date": "4/16/2024",
+        "originator": {
+          "name": "TITAN HEAVY INDUSTRIES",
+          "address_1": "890 ladustrial Drive",
+          "address_2": "Chicago, IL, 60602"
+        },
+        "beneficiary": {
+          "name": "Superior Castings Co",
+          "id": "8765432129"
+        },
+        "beneficiary_bank": {
+          "name": "Cleveland National",
+          "id": "114098765"
+        },
+        "reference_number": "RT204132"
+      },
+      {
+        "company_name": "Superior Casting Co.",
+        "company_phone": "(412) 555-6789",
+        "company_email": "billing@superiorcasting.com",
+        "company_website": "superiorcasting.net",
+        "invoice_date": "5/5/2024",
+        "invoice_number": "INV-2024-203",
+        "customer_id": "1047",
+        "purchase_order": "PO1921",
+        "payment_terms": "N30",
+        "payment_due_date": "6/4/2024",
+        "customer_name": "Titan Heavy Industries",
+        "customer_address": {
+          "street": "890 Industrial Drive",
+          "city": "Chicago",
+          "state": "IL",
+          "zip": "60602"
+        },
+        "customer_phone": "(312) 555-3456",
+        "customer_email": "accounts@titanindustries.com",
+        "account_number": "1043912",
+        "routing_number": "1298232",
+        "financial_details": {
+          "subtotal": "$19,430.00",
+          "discount": "-$500.00",
+          "tax_rate": "0%",
+          "total": "$18,930.00"
+        }
+      },
+      {
+        "company_name": "Superior Casting Co.",
+        "company_address": {
+          "street": "789 Foundry Avenue",
+          "city": "Pittsburgh",
+          "state": "PA",
+          "zip": "15201"
+        },
+        "company_contact": {
+          "phone": "(412) 555-6789",
+          "email": "billing@superorcasting.com",
+          "website": "superiorcasting.net"
+        },
+        "invoice_details": {
+          "date": "2/28/2024",
+          "invoice_number": "9019854",
+          "customer_id": "1047",
+          "purchase_order": "RT204132",
+          "payment_terms": "2/10 N60",
+          "due_date": "4/28/2024"
+        },
+        "customer_info": {
+          "name": "Titan Heavy Industries",
+          "address": {
+            "street": "890 Industrial Drive",
+            "city": "Chicago",
+            "state": "IL",
+            "zip": "60602"
+          },
+          "contact": {
+            "phone": "(312) 555-3456",
+            "email": "accounts@titanindustries.com"
+          }
+        },
+        "banking_info": {
+          "account_number": "1043912",
+          "routing_number": "1298232"
+        },
+        "total_amount": "$55,350.00"
+      },
+      {
+        "purchase_order": {
+          "po_number": "1921",
+          "date_issued": "2/4/2024",
+          "vendor": {
+            "name": "Jeff Richards",
+            "company": "Superior Casting Co",
+            "address": "789 Foundry Avenue",
+            "city_state_zip": "Pittsburgh, PA, 15201",
+            "phone": "(312) 555-3456"
+          },
+          "buyer": {
+            "name": "Todd Arnold",
+            "company": "Titan Heavy Industries",
+            "address": "890 Industrial Drive",
+            "city_state_zip": "Chicago, IL, 60602",
+            "email": "accounts@titanindustries.com",
+            "website": "www.titanheavyindustries.net"
+          },
+          "shipping": {
+            "method": "Freight",
+            "fob": "Dest",
+            "terms": "N30"
+          },
+          "approval": {
+            "date": "2/5/2024"
+          },
+          "financial": {
+            "total_amount": "18,450.00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "sample_index": 3,
+    "sample_description": {
+      "Customer Name": "Bella's Bakery",
+      "Customer #": "21031",
+      "Invoice Number": "202449",
+      "Invoice Amount": "2022",
+      "Invoice Date": "2022-05-02",
+      "Comments": ""
+    },
+    "doc_ids": [
+      "doc_1.json",
+      "doc_13.json",
+      "doc_2.json",
+      "doc_3.json"
+    ],
+    "documents": [
+      {
+        "invoice_details": {
+          "date": "5/2/2022",
+          "invoice_number": "202449",
+          "po_number": "LM10391",
+          "payment_terms": "Due on Receipt"
+        },
+        "customer_info": {
+          "name": "Bella Blake",
+          "business_name": "Bella's Bakery",
+          "address": "142 Cedar Ave, San Diego, CA, 90122",
+          "phone": "(217) 552-0192",
+          "email": "orders@bellasbakery.com"
+        },
+        "banking_info": {
+          "bank_name": "First National Bank",
+          "account_holder": "Evergreen Supplies Inc.",
+          "account_number": "9876543210",
+          "routing_number": "123456789",
+          "swift_code": "FNATUS33XXX"
+        },
+        "financial_summary": {
+          "subtotal": "1942.50",
+          "shipping_handling": "100.00",
+          "discount": "0.00",
+          "subtotal_less_discount": "2042.50",
+          "tax_rate": "7.05%",
+          "total_tax": "143.98",
+          "balance_due": "2,186.48"
+        }
+      },
+      {
+        "document_date": "5/6/2022",
+        "purchase_order_number": "LM10391",
+        "shipper_number": "1298428",
+        "consignee_email": "orders@bellasbakery.com",
+        "consignee_phone": "(217) 552-0192",
+        "consignee_name": "Bella's Bakery",
+        "consignee_address": "San Diego, CA, 90122",
+        "shipper_name": "Evergreen Supplies Inc.",
+        "shipper_street": "88 Sunrise Blvd",
+        "shipper_location": "Riverside, CA, 92506",
+        "cod_amount": "$100",
+        "freight_handling": "LOOSE PC and PLTS STC"
+      },
+      {
+        "business_name": "Bella's Bakery",
+        "business_address": {
+          "street": "142 Cedar Ave",
+          "city_state_zip": "San Diego, CA, 90122",
+          "phone": "(217) 552-0192",
+          "website": "bellasbakery.net"
+        },
+        "order_details": {
+          "date": "3/1/2022",
+          "po_number": "LM10391"
+        },
+        "vendor_info": {
+          "company": "Evergreen Supplies Inc.",
+          "contact": "Clark Wilson",
+          "street": "88 Sunrise Blvd",
+          "city_state_zip": "Riverside, CA, 92506",
+          "phone": "(951) 555-0123",
+          "email": "cwilson@evergreen.com"
+        },
+        "shipping_info": {
+          "method": "UPS",
+          "fob": "Destination",
+          "terms": "NA",
+          "recipient_email": "orders@bellasbakery.com"
+        },
+        "financial_details": {
+          "subtotal": "1,942.50",
+          "shipping": "100.00",
+          "tax": "143.98",
+          "total": "2,186.48"
+        },
+        "special_instructions": "Delivery needs to be completed by 5/20"
+      },
+      {
+        "remittance_date": "6/30/2022",
+        "purchasing": {
+          "company_name": "Bella's Bakery",
+          "address": "142 Cedar Ave, San Diego, CA, 90122",
+          "email": "orders@bellasbakery.com",
+          "phone": "(217) 552-0192",
+          "customer_reference": "10001"
+        },
+        "supplier": {
+          "company_name": "Evergreen Supplies Inc.",
+          "address": "88 Sunrise Blvd, Riverside, CA, 92506",
+          "phone": "(951) 555-0123"
+        },
+        "payment_details": {
+          "invoice_number": "202449",
+          "payment_method": "Wire",
+          "amount_paid": "2186.48"
+        }
+      }
+    ]
+  },
+  {
+    "sample_index": 4,
+    "sample_description": {
+      "Customer Name": "Bread Co",
+      "Customer #": "204203",
+      "Invoice Number": "18587422",
+      "Invoice Amount": "0",
+      "Invoice Date": "2024-03-24",
+      "Comments": ""
+    },
+    "doc_ids": [
+      "doc_16.json",
+      "doc_7.json",
+      "doc_9.json"
+    ],
+    "documents": [
+      {
+        "company_name": "Evergreen Supply",
+        "company_address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+        "company_phone": "(951) 555-0123",
+        "invoice_number": "3185",
+        "invoice_date": "3/24/2024",
+        "customer_name": "Emily Brooks",
+        "customer_company": "Bread Co",
+        "customer_address": "332 Beach Dr NE",
+        "customer_city_state_zip": "St Petersburg, FL, 33713",
+        "customer_phone": "(217) 552-0192",
+        "salesperson": "Chuck Lee",
+        "po_number": "0191",
+        "shipping_method": "Fedex",
+        "fob_point": "Origin",
+        "payment_terms": "2/10 N30",
+        "subtotal": "8400.00",
+        "shipping_handling": "342",
+        "total_amount": "8742.00",
+        "billing_contact": "Greg Handler",
+        "billing_email": "billing@evergreen"
+      },
+      {
+        "company_name": "Evergreen Supply",
+        "company_address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+        "company_phone": "(951) 555-0123",
+        "invoice_number": "9985",
+        "invoice_date": "1/29/2024",
+        "customer": {
+          "name": "Emily Brooks",
+          "company": "Bread Co",
+          "address": "332 Beach Dr NE",
+          "city_state_zip": "St Petersburg, FL, 33713",
+          "phone": "(217) 552-0192"
+        },
+        "order_details": {
+          "salesperson": "Chuck Lee",
+          "po_number": "0185",
+          "shipping_method": "Fedex",
+          "fob_point": "Origin",
+          "terms": "2/10 N30"
+        },
+        "financial": {
+          "total_amount": "$3,100.00"
+        },
+        "contact_info": {
+          "billing_contact": "Greg Handler",
+          "billing_email": "billing@evergreen"
+        }
+      },
+      {
+        "title": "REMITTANCE ADVICE",
+        "purchasing": {
+          "company_name": "Bread Co",
+          "address": "332 Beach Dr NE, St Petersburg, FL, 33713",
+          "email": "ebrooks@breadco.net",
+          "phone_number": "223-436-7891",
+          "customer_reference_number": "10032"
+        },
+        "supplier_details": {
+          "company_name": "Evergreen Suppliers",
+          "address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+          "email": "tlannister@evergreensuppliers.com",
+          "phone_number": "847-759-9990"
+        },
+        "invoices": [
+          {
+            "invoice_number": "3185",
+            "invoice_date": "3/21/2024",
+            "gross_amount": 8742,
+            "discount_taken": 175,
+            "paid_amount": 8567
+          },
+          {
+            "invoice_number": "9985",
+            "invoice_date": "1/29/2024",
+            "gross_amount": 3100,
+            "discount_taken": null,
+            "paid_amount": 3100
+          },
+          {
+            "invoice_number": "1043-A",
+            "invoice_date": "3/1/2024",
+            "gross_amount": 4555,
+            "discount_taken": null,
+            "paid_amount": 4555
+          },
+          {
+            "invoice_number": "2111",
+            "invoice_date": "3/8/2024",
+            "gross_amount": 2300,
+            "discount_taken": null,
+            "paid_amount": 2300
+          }
+        ],
+        "payment": {
+          "check_number": "1031",
+          "check_date": "3/24/2024",
+          "total_gross_amount": 18697,
+          "total_discount": 175,
+          "total_paid": 18522
+        }
+      }
+    ]
+  },
+  {
+    "sample_index": 5,
+    "sample_description": {
+      "Customer Name": "Bread Co",
+      "Customer #": "204209",
+      "Invoice Number": "98531002",
+      "Invoice Amount": "0",
+      "Invoice Date": "2024-01-29",
+      "Comments": ""
+    },
+    "doc_ids": [
+      "doc_16.json",
+      "doc_7.json",
+      "doc_9.json"
+    ],
+    "documents": [
+      {
+        "company_name": "Evergreen Supply",
+        "company_address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+        "company_phone": "(951) 555-0123",
+        "invoice_number": "3185",
+        "invoice_date": "3/24/2024",
+        "customer_name": "Emily Brooks",
+        "customer_company": "Bread Co",
+        "customer_address": "332 Beach Dr NE",
+        "customer_city_state_zip": "St Petersburg, FL, 33713",
+        "customer_phone": "(217) 552-0192",
+        "salesperson": "Chuck Lee",
+        "po_number": "0191",
+        "shipping_method": "Fedex",
+        "fob_point": "Origin",
+        "payment_terms": "2/10 N30",
+        "subtotal": "8400.00",
+        "shipping_handling": "342",
+        "total_amount": "8742.00",
+        "billing_contact": "Greg Handler",
+        "billing_email": "billing@evergreen"
+      },
+      {
+        "company_name": "Evergreen Supply",
+        "company_address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+        "company_phone": "(951) 555-0123",
+        "invoice_number": "9985",
+        "invoice_date": "1/29/2024",
+        "customer": {
+          "name": "Emily Brooks",
+          "company": "Bread Co",
+          "address": "332 Beach Dr NE",
+          "city_state_zip": "St Petersburg, FL, 33713",
+          "phone": "(217) 552-0192"
+        },
+        "order_details": {
+          "salesperson": "Chuck Lee",
+          "po_number": "0185",
+          "shipping_method": "Fedex",
+          "fob_point": "Origin",
+          "terms": "2/10 N30"
+        },
+        "financial": {
+          "total_amount": "$3,100.00"
+        },
+        "contact_info": {
+          "billing_contact": "Greg Handler",
+          "billing_email": "billing@evergreen"
+        }
+      },
+      {
+        "title": "REMITTANCE ADVICE",
+        "purchasing": {
+          "company_name": "Bread Co",
+          "address": "332 Beach Dr NE, St Petersburg, FL, 33713",
+          "email": "ebrooks@breadco.net",
+          "phone_number": "223-436-7891",
+          "customer_reference_number": "10032"
+        },
+        "supplier_details": {
+          "company_name": "Evergreen Suppliers",
+          "address": "9854 N Milwaukee Ave, Glenview, IL, 60025",
+          "email": "tlannister@evergreensuppliers.com",
+          "phone_number": "847-759-9990"
+        },
+        "invoices": [
+          {
+            "invoice_number": "3185",
+            "invoice_date": "3/21/2024",
+            "gross_amount": 8742,
+            "discount_taken": 175,
+            "paid_amount": 8567
+          },
+          {
+            "invoice_number": "9985",
+            "invoice_date": "1/29/2024",
+            "gross_amount": 3100,
+            "discount_taken": null,
+            "paid_amount": 3100
+          },
+          {
+            "invoice_number": "1043-A",
+            "invoice_date": "3/1/2024",
+            "gross_amount": 4555,
+            "discount_taken": null,
+            "paid_amount": 4555
+          },
+          {
+            "invoice_number": "2111",
+            "invoice_date": "3/8/2024",
+            "gross_amount": 2300,
+            "discount_taken": null,
+            "paid_amount": 2300
+          }
+        ],
+        "payment": {
+          "check_number": "1031",
+          "check_date": "3/24/2024",
+          "total_gross_amount": 18697,
+          "total_discount": 175,
+          "total_paid": 18522
+        }
+      }
+    ]
+  }
+]

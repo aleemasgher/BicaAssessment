@@ -1,0 +1,21 @@
+{
+	"document_date": "5/5/2024",
+	"bill_of_lading_number": "3275723",
+	"shipper_name": "Superior Casting Co",
+	"shipper_address": "789 Foundry Avenue",
+	"shipper_city_state_zip": "Pittsburgh, PA, 15201",
+	"shipper_id": "32952",
+	"carrier_name": "CPU",
+	"trailer_number": "52",
+	"seal_number": "A321",
+	"scac_code": "1442",
+	"pro_number": "325889200",
+	"location_number": "663",
+	"consignee_name": "Titan Heavy Industries",
+	"consignee_address": "890 Industrial Drive",
+	"consignee_city_state_zip": "Chicago, IL, 60602",
+	"consignee_id": "32753",
+	"purchase_order": "PO# 1921",
+	"contact_email": "billing@superiorcasting.com",
+	"declared_value": "20,000"
+}
