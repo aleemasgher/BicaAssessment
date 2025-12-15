@@ -113,43 +113,6 @@ def normalize_value(raw: str) -> str:
     return f"str:{s_alpha}"
 
 
-class DocumentDatasetLoader:
-    """
-    Loads documents from a directory. Each file is:
-      - single JSON document (filename.json)
-      - or JSONL file (filename.jsonl) containing multiple JSON docs, one per line
-    Yields documents as Python dicts.
-    """
-    def __init__(self, dataset_dir: str):
-        self.dataset_dir = dataset_dir
-
-    def _load_json(self, path: str) -> Dict[str, Any]:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    def _load_jsonl(self, path: str) -> Generator[Dict[str,Any],None,None]:
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                line=line.strip()
-                if not line:
-                    continue
-                yield json.loads(line)
-
-    def load_documents(self) -> Generator[Dict[str,Any],None,None]:
-        for entry in sorted(os.listdir(self.dataset_dir)):
-            path = os.path.join(self.dataset_dir, entry)
-            if os.path.isdir(path):
-                continue
-            if entry.lower().endswith(".jsonl"):
-                for doc in self._load_jsonl(path):
-                    yield doc
-            elif entry.lower().endswith(".json"):
-                yield self._load_json(path)
-            else:
-                # skip unknown file types
-                continue
-
-
 class DocumentMatcher:
     """
     Matches documents to sample descriptions.
@@ -185,14 +148,6 @@ class DocumentMatcher:
             if not nv or nv in self.noisy_values:
                 continue
             vals.add(nv)
-        # remove previous index if present
-        old = self.doc_values.get(doc_id)
-        if old:
-            for v in old:
-                if doc_id in self.value_index.get(v, set()):
-                    self.value_index[v].remove(doc_id)
-                    if not self.value_index[v]:
-                        del self.value_index[v]
         # set new values and index
         self.doc_values[doc_id] = vals
         for v in vals:
@@ -229,13 +184,14 @@ class DocumentMatcher:
         sample_vals = self.sample_signatures[sample_idx] if 0 <= sample_idx < len(self.sample_signatures) else set()
         inter = doc_vals & sample_vals
 
+        if not inter:
+            return 0.0
+
         # check if inter only contains date
         contains_date = any(v.startswith("date:") for v in inter)
         if contains_date and len(inter) == 1:
             return 0.0
 
-        if not inter:
-            return 0.0
         return sum(self._value_weight(v) for v in inter)
 
     def initial_assignments(self) -> Dict[int, Set[str]]:
@@ -290,7 +246,6 @@ def grouping(doc_dir: str, samples_file: str, out_file: str = "groupings_out.jso
       - loads sample descriptions array from JSON file
       - runs matcher and writes output JSON
     """
-    loader = DocumentDatasetLoader(doc_dir)
     matcher = DocumentMatcher(similarity_threshold=0.45)
 
     # load docs; assign stable doc ids (filename-based)
