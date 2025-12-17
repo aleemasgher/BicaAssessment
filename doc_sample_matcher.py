@@ -126,7 +126,9 @@ class DocumentMatcher:
 
         self.noisy_elements = {
             "shipping_method", "method", "city", "state", "zip", "origin", "salesperson", "terms", "fob_point",
-            "city_state_zip", "address", "delivery_date", "subtotal", "total"
+            "city_state_zip", "delivery_date", "subtotal", "total", "discount", "tax_rate", "salesperson",
+            "carrier_name", "shipper_id", "declared_value", "seal_number", "scac_code", "total_gross_amount",
+            "total_discount", "total_paid", "shipping_handling", "fob"
         }
 
     # ----------------------------
