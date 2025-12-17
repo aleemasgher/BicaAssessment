@@ -232,8 +232,8 @@ class DocumentMatcher:
             if not ranked or ranked[0][1] == 0:
                 continue
 
-            if len(ranked) > 1 and ranked[0][1] - ranked[1][1] < AMBIGUITY_MARGIN:
-                continue  # ambiguous → unassigned
+            # if len(ranked) > 1 and ranked[0][1] - ranked[1][1] < AMBIGUITY_MARGIN:
+            #     continue  # ambiguous → unassigned
 
             doc_assignment[doc] = ranked[0]
 
