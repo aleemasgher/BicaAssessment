@@ -16,16 +16,15 @@ _NON_ALNUM_RE = re.compile(r'[^0-9a-zA-Z/]')
 _CURRENCY_RE = re.compile(r'[\$\£\€]')
 _NUMBER_RE = re.compile(r'^[-+]?\d+(\.\d+)?$')
 
+HOP_DECAY = 0.6
+AMBIGUITY_MARGIN = 0.15
+
 
 # ----------------------------
 # Utility Functions
 # ----------------------------
 
 def extract_scalars(obj: Any, parent_key: str = "") -> List[Tuple[str, str]]:
-    """
-    Recursively extract primitive scalar values from nested JSON-like objects.
-    Returns list of (key, value) tuples.
-    """
     scalars: List[Tuple[str, str]] = []
 
     if obj is None:
@@ -40,7 +39,6 @@ def extract_scalars(obj: Any, parent_key: str = "") -> List[Tuple[str, str]]:
             full_key = f"{parent_key}[{idx}]" if parent_key else str(idx)
             scalars.extend(extract_scalars(item, full_key))
     else:
-        # scalar value, return with its key path
         scalars.append((parent_key, str(obj)))
 
     return scalars
@@ -51,33 +49,28 @@ def try_parse_date(s: str) -> Optional[str]:
         "%m/%d/%Y", "%m/%d/%y", "%Y-%m-%d",
         "%m-%d-%Y", "%Y/%m/%d", "%b %d, %Y", "%B %d, %Y"
     ]
-    s = s.strip()
     for fmt in formats:
         try:
-            return datetime.strptime(s, fmt).strftime("%Y-%m-%d")
+            return datetime.strptime(s.strip(), fmt).strftime("%Y-%m-%d")
         except Exception:
             pass
     return None
 
 
 def normalize_value(raw: str) -> str:
-    if raw is None:
-        return ""
-    s = str(raw).strip()
-    if not s:
+    if not raw:
         return ""
 
-    s = _CURRENCY_RE.sub("", s)
+    s = _CURRENCY_RE.sub("", str(raw).strip())
 
     date = try_parse_date(s)
     if date:
         return f"date:{date}"
 
-    if _NUMBER_RE.match(s.replace(" ", "")):
+    if _NUMBER_RE.match(s.replace(",", "")):
         return f"num:{s.replace(',', '')}"
 
-    s = s.lower()
-    s = _NON_ALNUM_RE.sub(" ", s)
+    s = _NON_ALNUM_RE.sub(" ", s.lower())
     s = re.sub(r"\s+", " ", s).strip()
     return f"str:{s}" if s else ""
 
@@ -92,10 +85,10 @@ def token_category(token: str) -> str:
     if token.startswith("num:"):
         return "number"
     if token.startswith("str:"):
-        val = token[4:]
-        if re.fullmatch(r"[A-Z]{2}", val.upper()):
+        v = token[4:]
+        if re.fullmatch(r"[A-Z]{2}", v.upper()):
             return "state"
-        if re.fullmatch(r"\d{5}(-\d{4})?", val):
+        if re.fullmatch(r"\d{5}(-\d{4})?", v):
             return "zip"
         return "text"
     return "other"
@@ -112,7 +105,7 @@ CATEGORY_MULTIPLIER = {
 
 
 # ----------------------------
-# Matcher Class
+# Matcher
 # ----------------------------
 
 class DocumentMatcher:
@@ -122,7 +115,7 @@ class DocumentMatcher:
         self.doc_values: Dict[str, Set[str]] = {}
         self.value_index: Dict[str, Set[str]] = defaultdict(set)
         self.samples: List[Dict[str, Any]] = []
-        self.sample_signatures: List[Set[str]] = set(), []
+        self.sample_signatures: List[Set[str]] = []
 
         self.noisy_elements = {
             "shipping_method", "method", "city", "state", "zip", "origin", "salesperson", "terms", "fob_point",
@@ -139,13 +132,12 @@ class DocumentMatcher:
         self.documents[doc_id] = deepcopy(doc)
         vals = set()
 
-        for s in extract_scalars(doc):
-            k = s[0].split('.')[-1]
-            v = normalize_value(s[1])
-            if k in self.noisy_elements:
+        for k, v in extract_scalars(doc):
+            if k.split(".")[-1] in self.noisy_elements:
                 continue
-            if v and v not in self.noisy_elements:
-                vals.add(v)
+            nv = normalize_value(v)
+            if nv:
+                vals.add(nv)
 
         self.doc_values[doc_id] = vals
         for v in vals:
@@ -155,106 +147,114 @@ class DocumentMatcher:
         for k, v in docs.items():
             self.add_document(k, v)
 
-    def set_samples(self, sample_list: List[Dict[str, Any]]) -> None:
-        self.samples = deepcopy(sample_list)
+    def set_samples(self, samples: List[Dict[str, Any]]) -> None:
+        self.samples = deepcopy(samples)
         self.sample_signatures = []
 
-        for s in self.samples:
+        for s in samples:
             sig = set()
-            for sc in extract_scalars(s):
-                k = sc[0].split('.')[-1]
-                v = normalize_value(sc[1])
-                if k in self.noisy_elements:
+            for k, v in extract_scalars(s):
+                if k.split(".")[-1] in self.noisy_elements:
                     continue
-                if v and v not in self.noisy_elements:
-                    sig.add(v)
-
+                nv = normalize_value(v)
+                if nv:
+                    sig.add(nv)
             self.sample_signatures.append(sig)
 
     # ----------------------------
     # Scoring
     # ----------------------------
 
-    def _idf_weight(self, token: str) -> float:
-        df = len(self.value_index.get(token, set()))
-        return 1.0 / math.log(2 + df)
+    def _idf(self, t: str) -> float:
+        return 1.0 / math.log(2 + len(self.value_index.get(t, [])))
 
     def _score_intersection(self, inter: Set[str]) -> float:
         if not inter:
             return 0.0
-
         if len(inter) == 1 and next(iter(inter)).startswith("date:"):
             return 0.0
 
-        score = 0.0
-        for t in inter:
-            cat = token_category(t)
-            mult = CATEGORY_MULTIPLIER.get(cat, 0.2)
-            score += self._idf_weight(t) * mult
+        return sum(
+            self._idf(t) * CATEGORY_MULTIPLIER[token_category(t)]
+            for t in inter
+        )
 
-        return score
-
-    def score_doc_to_sample(self, doc_id: str, sample_idx: int) -> float:
-        inter = self.doc_values.get(doc_id, set()) & self.sample_signatures[sample_idx]
-        return self._score_intersection(inter)
+    def score_doc_to_sample(self, d: str, i: int) -> float:
+        return self._score_intersection(
+            self.doc_values[d] & self.sample_signatures[i]
+        )
 
     def score_doc_to_doc(self, a: str, b: str) -> float:
-        inter = self.doc_values[a] & self.doc_values[b]
-        return self._score_intersection(inter)
+        return self._score_intersection(
+            self.doc_values[a] & self.doc_values[b]
+        )
 
     # ----------------------------
-    # Transitive Expansion
+    # Graph traversal (hop aware)
     # ----------------------------
 
-    def expand_docs(self, seeds: Set[str]) -> Set[str]:
-        expanded = set(seeds)
-        q = deque(seeds)
+    def _best_path_score(self, start: str, sample_idx: int) -> float:
+        q = deque([(start, 0, 1.0)])
+        seen = {start}
 
+        best = 0.0
         while q:
-            cur = q.popleft()
-            for other in self.documents:
-                if other in expanded or other == cur:
-                    continue
-                if self.score_doc_to_doc(cur, other) >= self.similarity_threshold:
-                    expanded.add(other)
-                    q.append(other)
+            cur, hops, conf = q.popleft()
 
-        return expanded
+            direct = self.score_doc_to_sample(cur, sample_idx)
+            if direct >= self.similarity_threshold:
+                best = max(best, conf * direct)
+
+            for other in self.documents:
+                if other in seen or other == cur:
+                    continue
+                s = self.score_doc_to_doc(cur, other)
+                if s >= self.similarity_threshold:
+                    seen.add(other)
+                    q.append((other, hops + 1, conf * HOP_DECAY))
+
+        return best
 
     # ----------------------------
-    # Matching
+    # Matching (single assignment)
     # ----------------------------
 
     def match(self) -> Dict[int, Dict[str, Any]]:
-        results = {}
+        doc_assignment: Dict[str, Tuple[int, float]] = {}
 
-        for i in range(len(self.samples)):
-            seeds = {
-                d for d in self.documents
-                if self.score_doc_to_sample(d, i) >= self.similarity_threshold
+        for doc in self.documents:
+            scores = {
+                i: self._best_path_score(doc, i)
+                for i in range(len(self.samples))
             }
 
-            if not seeds:
+            ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+            if not ranked or ranked[0][1] == 0:
                 continue
 
-            all_docs = self.expand_docs(seeds)
-            results[i] = {
-                "sample_description": self.samples[i],
-                "doc_ids": sorted(all_docs),
-                "documents": [self.documents[d] for d in sorted(all_docs)]
-            }
+            if len(ranked) > 1 and ranked[0][1] - ranked[1][1] < AMBIGUITY_MARGIN:
+                continue  # ambiguous → unassigned
+
+            doc_assignment[doc] = ranked[0]
+
+        results: Dict[int, Dict[str, Any]] = defaultdict(lambda: {
+            "doc_ids": [],
+            "documents": []
+        })
+
+        for d, (i, _) in doc_assignment.items():
+            results[i]["doc_ids"].append(d)
+            results[i]["documents"].append(self.documents[d])
+            results[i]["sample_description"] = self.samples[i]
+
+        for r in results.values():
+            r["doc_ids"].sort()
 
         return results
 
     def export_groupings_json(self) -> str:
         return json.dumps(
-            [
-                {
-                    "sample_index": i,
-                    **v
-                }
-                for i, v in self.match().items()
-            ],
+            [{"sample_index": i, **v} for i, v in self.match().items()],
             indent=2,
             ensure_ascii=False
         )
@@ -292,3 +292,16 @@ if __name__ == "__main__":
         grouping(sample_docs_dir, samples_json_file)
     else:
         print("To run example, create `./document_jsons/` with .json files and `./sample.json` file.")
+
+
+# a = b = c = d = e
+
+# a => sample_1
+# e => sample_2
+#
+#
+#
+#
+# We have doc_1 which ==> Sample_1
+# We have doc_2 which ==> Sample_2
+# We have doc_3 which ==> doc_1 & doc_2
